@@ -1,0 +1,7 @@
+Usage Statistics since 2017-04-21T10:49:40.694
+--------------------------------------------------------
+Total Polls for Bus Data: 1
+--------------------------------------------------------
+BusID: busID
+	StopID: stopID	UserID: userID	RecordTime: 2017-04-21T10:49:40.757
+

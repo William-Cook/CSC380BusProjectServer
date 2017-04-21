@@ -1,0 +1,75 @@
+{
+   "results" : [
+      {
+         "address_components" : [
+            {
+               "long_name" : "W 146 St/Malcolm X Bl",
+               "short_name" : "W 146 St/Malcolm X Bl",
+               "types" : [
+                  "bus_station",
+                  "establishment",
+                  "point_of_interest",
+                  "transit_station"
+               ]
+            },
+            {
+               "long_name" : "Manhattan",
+               "short_name" : "Manhattan",
+               "types" : [ "political", "sublocality", "sublocality_level_1" ]
+            },
+            {
+               "long_name" : "New York",
+               "short_name" : "New York",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "New York County",
+               "short_name" : "New York County",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "New York",
+               "short_name" : "NY",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "United States",
+               "short_name" : "US",
+               "types" : [ "country", "political" ]
+            },
+            {
+               "long_name" : "10039",
+               "short_name" : "10039",
+               "types" : [ "postal_code" ]
+            }
+         ],
+         "formatted_address" : "W 146 St/Malcolm X Bl, New York, NY 10039, USA",
+         "geometry" : {
+            "location" : {
+               "lat" : 40.821152,
+               "lng" : -73.935974
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 40.8225009802915,
+                  "lng" : -73.93462501970849
+               },
+               "southwest" : {
+                  "lat" : 40.8198030197085,
+                  "lng" : -73.93732298029151
+               }
+            }
+         },
+         "partial_match" : true,
+         "place_id" : "ChIJTc4KINb1wokR4xAntvhofUA",
+         "types" : [
+            "bus_station",
+            "establishment",
+            "point_of_interest",
+            "transit_station"
+         ]
+      }
+   ],
+   "status" : "OK"
+}
