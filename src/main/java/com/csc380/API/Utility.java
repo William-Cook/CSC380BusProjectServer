@@ -38,11 +38,12 @@ public final class Utility {
     }
 
     //encodes hashmap into printwriter provided
-    public static void encodeHashMap(PrintWriter out) {
+    public static void encodeHashMap(PrintWriter out, String query) {
         for (Bus b : busses.values()) {
             if (b != null && b.busID != null
                     && b.id != null && b.destinationName != null
-                    && b.expectedArrivalTime != null) {
+                    && b.expectedArrivalTime != null
+                    && b.id.equals(query)) {
                 // Declare new bus
                 out.println("NEWBUS");
                 // Everything for bus constructor
@@ -288,8 +289,9 @@ public final class Utility {
         }
         if (responseCode == 200) {
             InputStream inputStream = conn.getInputStream();
-            String saveFilePath = saveLocation + File.separator + fileName;
-            FileOutputStream outputStream = new FileOutputStream(saveFilePath);
+            ClassLoader cl = Utility.class.getClassLoader();
+            FileOutputStream outputStream = new 
+                FileOutputStream(cl.getResource(fileName).getFile());
             int bytesRead = -1;
             byte[] buffer = new byte[1024];
             while ((bytesRead = inputStream.read(buffer)) != -1) {

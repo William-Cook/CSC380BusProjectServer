@@ -33,7 +33,7 @@ public class UtilityTest extends TestCase {
         Utility.jsonParser("vehicle-monitoring.json");
         Utility.parseShapes("shapes.txt");
         Utility.assignTrips();
-        Utility.encodeHashMap(pw);
+        Utility.encodeHashMap(pw, "M1");
         File f = new File("testEncoding.txt");
         Scanner fs = new Scanner(f);
         assertTrue(fs.hasNext());
@@ -99,7 +99,7 @@ public class UtilityTest extends TestCase {
         when(conn.getResponseCode()).thenReturn(200);
         when(conn.getInputStream()).thenReturn(finps);
         Utility.getFile(conn,
-                "/home/bill/SchoolWork/csc380/CSC_380_bus_project",
+                "/home/bill/SchoolWork/csc380/CSC_380_bus_project/testFile.txt",
                 "testfile.txt", false);
         assertTrue(true);
     }
