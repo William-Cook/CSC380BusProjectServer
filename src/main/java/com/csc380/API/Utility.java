@@ -333,10 +333,7 @@ public final class Utility {
     }
 
     public static void jsonParser(String fn) throws IOException, ParseException, org.json.simple.parser.ParseException {
-        //String fn = Utility.getFile("http://bustime.mta.info/api/siri/vehicle-monitoring.json?key=7a22c3e8-61a7-40ff-9d54-714e36f56880", "C:/Users/dt817/OneDrive/Documents" , "jsonFile.json");
-        if (busses == null) {
-            busses = new HashMap();
-        }
+        busses = new HashMap<String, Bus>();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMM uu  hh:mm");
 
         JSONParser parser = new JSONParser();
@@ -371,13 +368,10 @@ public final class Utility {
                     continue;
                 }
                 String expectedArrivalTime = formatter.format(ZonedDateTime.parse(mc.get("ExpectedArrivalTime").toString()));
-                // System.out.println(expectedArrivalTime);
                 String expectedDepartureTime = formatter.format(ZonedDateTime.parse(mc.get("ExpectedDepartureTime").toString()));
-                //if(longitude != 0 && latitude != 0 && busID != null && destinationName != null && expectedArrivalTime != null && expectedDepartureTime != null && direction != 0){
                 Bus newBus = new Bus(longitude, latitude, busIDRoute, destinationName, expectedArrivalTime, expectedDepartureTime, direction);
                 newBus.busID = busID;
                 busses.put(busID, newBus);
-                // }
 
             }
         }
