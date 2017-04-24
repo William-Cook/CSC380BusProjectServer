@@ -18,24 +18,29 @@ import java.util.logging.Logger;
  *
  * @author bill
  */
-public class UpdateModel extends TimerTask{
-    
-    public void run(){
+public class UpdateModel extends TimerTask {
+
+    public void run() {
         System.out.println("Executing TimerTask UpdateModel");
         Utility.updateModelExecuteCount++;
         ClassLoader cl = Utility.class.getClassLoader();
         try {
             HttpURLConnection conn = Utility.openMTAApiConnection();
             Utility.getFile(conn, cl.getResource("vehicle-monitoring.json").getPath(), "vehicle-monitoring.json", false);
-            Utility.jsonParser("vehicle-monitoring.json");
-            Utility.assignTrips();
+
         } catch (IOException ex) {
             System.out.println("IO Exception getting Vehicle Data.");
+        }
+        try {
+            Utility.jsonParser("vehicle-monitoring.json");
+        } catch (IOException ex) {
+            System.out.println("IO Exception parsing Vehicle Data.");
         } catch (ParseException ex) {
             System.out.println("Parse Exception parsing Vehicle Data.");
         } catch (org.json.simple.parser.ParseException ex) {
             System.out.println("Parse Exception parsing Vehicle Data.");
         }
+        Utility.assignTrips();
     }
-    
+
 }
