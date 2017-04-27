@@ -22,6 +22,7 @@ import java.util.TimerTask;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import sun.awt.Mutex;
 
 public final class Utility {
 
@@ -33,6 +34,7 @@ public final class Utility {
     public static HashMap<String, Trip> trips;
     public static HashMap<String, Shape> shapes;
     public static boolean initialized = false;
+    public static final Mutex lock = new Mutex();
 
     private Utility() {
     }
