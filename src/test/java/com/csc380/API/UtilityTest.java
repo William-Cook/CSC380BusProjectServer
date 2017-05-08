@@ -104,8 +104,10 @@ public class UtilityTest extends TestCase {
         assertTrue(true);
     }
 
-    // test startup tasks
-//    public void testStartupTasks() throws InterruptedException, IOException{
+     //test startup tasks
+//    public void testStartupTasks() throws InterruptedException, IOException, 
+//            FileNotFoundException, ParseException, 
+//            org.json.simple.parser.ParseException{
 //        Utility.startupTasks();
 //        int first = Utility.updateModelExecuteCount;
 //        Thread.sleep(72000);

@@ -114,7 +114,9 @@ public class MyServlet extends HttpServlet {
                 }
             } else if (request.getParameter("RequestType").equals("getBusses")) {
                 String query = request.getParameter("RouteID");
-                Utility.encodeHashMap(out, query);
+                synchronized (Utility.lock) {
+                    Utility.encodeHashMap(out, query);
+                }
                 UseStats.addPoll();
             } else if (request.getParameter("RequestType").equals("useStats")) {
                 UseStats.addUse(request.getParameter("BusID"),
